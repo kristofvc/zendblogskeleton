@@ -72,7 +72,7 @@ class Post implements InputFilterAwareInterface
      *
      * @param array $data
      */
-    public function populate($data = array()) 
+    public function exchangeArray($data = array()) 
     {
         $this->id = $data['id'];
         $this->body = $data['body'];

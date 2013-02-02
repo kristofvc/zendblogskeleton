@@ -3,8 +3,8 @@ return array(
     'modules' => array(
         'Application',
         'Blog',
-        //'DoctrineModule',
-        //'DoctrineORMModule',
+        'DoctrineModule',
+        'DoctrineORMModule',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(

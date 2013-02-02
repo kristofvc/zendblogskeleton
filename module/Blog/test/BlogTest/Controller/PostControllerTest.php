@@ -87,8 +87,8 @@ class PostControllerTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(200, $response->getStatusCode());
     }
 
-    public function testGetPostTableReturnsAnInstanceOfPostTable()
+    /*public function testGetPostTableReturnsAnInstanceOfPostTable()
     {
         $this->assertEquals('Blog\Model\PostTable', get_class($this->controller->getPostTable()));
-    }
+    }*/
 }
