@@ -50,6 +50,10 @@ class PostController extends AbstractActionController
  
     public function addAction()
     {
+        if (!$this->zfcUserAuthentication()->hasIdentity()) {
+            return $this->redirect()->toRoute('zfcuser'); 
+        }
+
         $form = new PostForm();
         $form->get('submit')->setAttribute('label', 'Add');
  
@@ -75,6 +79,10 @@ class PostController extends AbstractActionController
  
     public function editAction()
     {
+        if (!$this->zfcUserAuthentication()->hasIdentity()) {
+            return $this->redirect()->toRoute('zfcuser'); 
+        }
+
         $id = (int)$this->getEvent()->getRouteMatch()->getParam('id');
         if (!$id) {
             return $this->redirect()->toRoute('post', array('action'=>'add'));
@@ -106,6 +114,10 @@ class PostController extends AbstractActionController
  
     public function deleteAction()
     {
+        if (!$this->zfcUserAuthentication()->hasIdentity()) {
+            return $this->redirect()->toRoute('zfcuser'); 
+        }
+
         $id = (int)$this->getEvent()->getRouteMatch()->getParam('id');
         if (!$id) {
             return $this->redirect()->toRoute('post');

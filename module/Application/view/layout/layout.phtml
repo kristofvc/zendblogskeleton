@@ -34,6 +34,18 @@
                             <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
+                    <div class="nav-collapse collapse pull-right">
+                        <ul class="nav">
+                            <?php IF(!$this->zfcUserIdentity()): ?>
+                                <!-- display the login form -->
+                                <li><a href="<?php echo $this->url('zfcuser'); ?>">login</a></li>
+                            <?php ELSE: ?>
+                                <!-- display the 'display name' of the user -->
+                                <li><a href="#"><?php echo $this->zfcUserIdentity()->getDisplayname(); ?></li></a>
+                                <li><a href="<?php echo $this->url('zfcuser/logout') ?>">[Sign Out]</a></li>
+                            <?php ENDIF ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
